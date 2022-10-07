@@ -1,0 +1,18 @@
+{% extends 'layout.html' %}
+{% block maincontent%}
+    <h2> 添加诗歌</h2>
+    <form action="{% url 'poem:svc_add' %}" method="post">
+        <!-- django中防止csrf攻击的方式 -->
+        {% csrf_token %}
+
+        <div class="form-group">
+            <input class='form-control' type="text" name="title" placeholder="请输入标题">
+        </div>
+        <div class='form-group'>
+            <input class='form-control' type="text" name="content" placeholder='请输入诗歌内容'>
+        </div>
+        <div class='form-group'>
+            <input class='btn btn-primary' type="submit" value='添加诗歌'>
+        </div>
+    </form>
+{% endblock %}

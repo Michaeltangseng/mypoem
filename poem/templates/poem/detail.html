@@ -1,0 +1,12 @@
+{% extends 'layout.html' %}
+{% block maincontent%}
+    <a href="{% url 'poem:index' %}">返回主页</a>
+
+    <article class='text-center'>
+        <h2 class='text-primary'>{{poem.title}}</h2>
+        {% for p in poem.contents %}
+            <p>{{p}}</p>
+        {% endfor %}
+    </article>
+
+{% endblock %}
